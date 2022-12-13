@@ -16,9 +16,8 @@ public class ExampleInstallAppAndroidEmulator {
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel3");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10");
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-
-
         desiredCapabilities.setCapability(MobileCapabilityType.APP,"C:\\ApkFilesForTesting\\apidemos.apk");
+
         AndroidDriver<AndroidElement> driver= null;
         try {
             driver = new AndroidDriver<>(new URL("http:127.0.0.1:4723/wd/hub"),desiredCapabilities);
