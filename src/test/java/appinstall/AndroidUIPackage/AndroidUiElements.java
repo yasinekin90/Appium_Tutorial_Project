@@ -9,5 +9,6 @@ public interface AndroidUiElements {
     By home= By.id("android:id/home");
     By listElement=By.xpath("//android.widget.ListView//android.widget.LinearLayout//android.widget.LinearLayout");
     By drag_and_Drop_Simple=By.id("com.boopathy.raja.tutorial:id/Drag_and_Drop_Simple");
+    By quickScrollBar=By.id("com.boopathy.raja.tutorial:id/List_ScrollQuick");
 
 }

@@ -1,5 +1,6 @@
 package appinstall.AndroidUIPackage;
 
+import appinstall.ScrollWithAndroidUI;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -9,6 +10,7 @@ import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static appinstall.AndroidUIPackage.LocatorsofAndroidUI.*;
@@ -39,7 +41,7 @@ public class BaseAndroidUi implements AndroidUiElements {
         driver.findElement(continueButton).click();
         driver.findElement(button1).click();
         driver.findElement(home).click();
-        simpleDragDrop();
+
     }
 
 
@@ -53,6 +55,31 @@ public class BaseAndroidUi implements AndroidUiElements {
         }
         driver.quit();
     }
+
+
+
+
+    public BaseAndroidUi listView_quickscrollbar() {
+        List<AndroidElement> list = driver.findElements(listElement);
+        list.get(5).click();
+
+        return this;
+    }
+
+    public BaseAndroidUi quickScrollBar() {
+
+        AndroidElement scrollBarButton = driver.findElement(quickScrollBar);
+        scrollBarButton.click();
+        return this;
+    }
+
+    public AndroidElement scrollToListItem(String str) {
+        AndroidElement PermissionElement = driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"" + str + "\"))");
+
+        return PermissionElement;
+    }
+
+
 
 
 
